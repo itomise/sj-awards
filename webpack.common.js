@@ -5,14 +5,14 @@ const globEntries = require('webpack-glob-entries')
 
 // ルートディレクトリの設定  - - - - - - - - - - - - - - - - - - - - -
 
-const PUBLIC_URL = '/public'
+const PUBLIC_URL = '/sj-awards'
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 const webpack_config = {
   entry: globEntries('./src/javascripts/*.js'),
   output: {
-    path: path.resolve(__dirname, './htdocs' + PUBLIC_URL),
+    path: path.resolve(__dirname, './docs'),
     filename: 'js/[name].js',
   },
   module: {
