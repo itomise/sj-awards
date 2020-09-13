@@ -1,8 +1,9 @@
 import * as THREE from 'three'
+import { VideoMesh } from './videoMesh'
 
 class PipelineModule {
   constructor() {
-    this.videoFile = `${process.env.PUBLIC_URL}/video/jellyfish-video.mp4`
+    this.videoFile = `${process.env.PUBLIC_URL}/video/test.mp4`
 
     this.video
     this.videoObj
@@ -40,10 +41,11 @@ class PipelineModule {
     texture.format = THREE.RGBFormat
     texture.crossOrigin = 'anonymous'
 
-    this.videoObj = new THREE.Mesh(
-      new THREE.PlaneGeometry(0.75, 1),
-      new THREE.MeshBasicMaterial({ map: texture })
-    )
+    const mesh = new VideoMesh()
+    mesh.init(texture)
+
+    this.videoObj = mesh.obj
+
     // ターゲットが検出されるまで非表示に
     this.videoObj.visible = false
     scene.add(this.videoObj)
