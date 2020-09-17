@@ -8,7 +8,7 @@ void main() {
 
   vec4 dest = texture2D(tex, vUv);
 
-  if (dest.b > 0.8) {
+  if (dest.b > 0.75) {
     dest.a = 0.0;
   }
 
