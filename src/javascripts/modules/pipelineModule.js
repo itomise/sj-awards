@@ -3,7 +3,7 @@ import { VideoMesh } from './videoMesh'
 
 class PipelineModule {
   constructor() {
-    this.videoFile = `${process.env.PUBLIC_URL}/video/test.mp4`
+    this.videoFile = `${process.env.PUBLIC_URL}/video/main.mp4`
 
     this.video
     this.videoObj
