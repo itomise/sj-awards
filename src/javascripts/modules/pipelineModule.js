@@ -77,13 +77,19 @@ class PipelineModule {
   showTarget({ detail }) {
     // detail.name で 8th wallで登録した画像の名前をとれる
 
-    if (detail.name === 'video-target') {
-      this.videoObj.position.copy(detail.position)
-      this.videoObj.quaternion.copy(detail.rotation)
-      this.videoObj.scale.set(detail.scale, detail.scale, detail.scale)
-      this.videoObj.visible = true
-      this.video.play()
-    }
+    this.videoObj.position.copy(detail.position)
+    this.videoObj.quaternion.copy(detail.rotation)
+    this.videoObj.scale.set(detail.scale, detail.scale, detail.scale)
+    this.videoObj.visible = true
+    this.video.play()
+
+    // if (detail.name === 'video-target') {
+    //   this.videoObj.position.copy(detail.position)
+    //   this.videoObj.quaternion.copy(detail.rotation)
+    //   this.videoObj.scale.set(detail.scale, detail.scale, detail.scale)
+    //   this.videoObj.visible = true
+    //   this.video.play()
+    // }
   }
 
   // マーカーが検出されなくなったら画像フレームを非表示に
