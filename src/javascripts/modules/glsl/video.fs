@@ -8,9 +8,7 @@ void main() {
 
   vec4 dest = texture2D(tex, vUv);
 
-  if (dest.b > 0.8) {
-    dest.a = 0.0;
-  }
+  dest.a = step(dest.b, 0.8);
 
   gl_FragColor = dest;
 
